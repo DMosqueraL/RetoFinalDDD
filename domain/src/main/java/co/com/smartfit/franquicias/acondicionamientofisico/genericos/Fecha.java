@@ -2,7 +2,6 @@ package co.com.smartfit.franquicias.acondicionamientofisico.genericos;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import javax.management.ValueExp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;

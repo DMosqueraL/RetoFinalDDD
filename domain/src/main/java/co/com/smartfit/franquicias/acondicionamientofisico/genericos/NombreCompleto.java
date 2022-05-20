@@ -1,5 +1,6 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.genericos;
 
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Serie;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
@@ -18,6 +19,10 @@ public class NombreCompleto implements ValueObject<String> {
         if (this.nombreCompleto.length() > 100) {
             throw new IllegalArgumentException("El nombre completo no permite más de 100 carácteres");
         }
+    }
+
+    public static NombreCompleto of(String nombre){
+        return new NombreCompleto(nombre);
     }
 
     @Override
