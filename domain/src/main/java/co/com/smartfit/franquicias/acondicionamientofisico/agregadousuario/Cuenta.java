@@ -21,13 +21,4 @@ public class Cuenta  extends Entity <CuentaId>{
 
     public void cambiarAPlanPremiun(CuentaId cuentaId, Plan plan) {this.plan = plan;}
 
-    public Mensualidad Mensualidad() {
-        return mensualidad;
-    }
-
-    public Plan Plan() {
-        return plan;
-    }
-
-
 }

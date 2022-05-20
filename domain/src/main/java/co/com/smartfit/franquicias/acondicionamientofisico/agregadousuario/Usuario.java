@@ -70,6 +70,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     }
 
     public void asignarEstadoUsuario(UsuarioId usuarioId, Estado estado){
+        this.estado = estado;
         appendChange(new EstadoUsuarioAsignado(usuarioId, estado)).apply();
     }
 

@@ -11,7 +11,6 @@ public class Fecha implements ValueObject<Fecha.Pros> {
     private final LocalDate dia;
 
     public Fecha(LocalDateTime hora, LocalDate dia) {
-        //TODO: agregar validaciones (fechas funturas, el dia debe ser de 24)
         this.hora = Objects.requireNonNull(hora);
         this.dia = Objects.requireNonNull(dia);
     }
@@ -29,6 +28,10 @@ public class Fecha implements ValueObject<Fecha.Pros> {
                 return dia;
             }
         };
+    }
+
+    public static Fecha of(LocalDateTime hora, LocalDate dia){
+        return new Fecha(hora, dia);
     }
 
     public interface Pros {

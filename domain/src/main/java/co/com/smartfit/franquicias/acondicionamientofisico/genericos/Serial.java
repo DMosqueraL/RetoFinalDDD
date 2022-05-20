@@ -1,10 +1,11 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.genericos;
 
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Marca;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Serial implements ValueObject {
+public class Serial implements ValueObject<String> {
 
     private final String serial;
 
@@ -16,8 +17,11 @@ public class Serial implements ValueObject {
         }
     }
 
+    public static Serial of(String serial){
+        return new Serial(serial);
+    }
     @Override
-    public Object value() {
+    public String value() {
         return serial;
     }
 }
