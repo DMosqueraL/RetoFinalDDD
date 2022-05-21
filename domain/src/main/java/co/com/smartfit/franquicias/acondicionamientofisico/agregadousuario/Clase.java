@@ -13,11 +13,11 @@ public class Clase extends Entity<ClaseId> {
     protected Duracion duracion;
 
 
-    public Clase(ClaseId entityId,
+    public Clase(ClaseId claseId,
                  NombreCompleto nombreClase,
                  Rutina rutina,
                  Duracion duracion) {
-        super(entityId);
+        super(claseId);
         this.nombreClase = nombreClase;
         this.rutina = rutina;
         this.duracion = duracion;

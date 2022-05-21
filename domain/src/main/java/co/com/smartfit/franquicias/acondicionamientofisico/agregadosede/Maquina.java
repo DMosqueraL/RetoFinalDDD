@@ -1,9 +1,9 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadosede;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Categoria;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.EstadoMantenimiento;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.MaquinaId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Marca;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.EstadoMantenimiento;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Serial;
 import co.com.sofka.domain.generic.Entity;

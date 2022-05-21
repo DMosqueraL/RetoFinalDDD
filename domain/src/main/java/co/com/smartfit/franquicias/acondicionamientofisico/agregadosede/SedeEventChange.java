@@ -43,27 +43,20 @@ public class SedeEventChange extends EventChange {
         });
 
         apply((MaquinaReemplazada event) -> {
-            var maquinaId = event.getMaquinaId();
-            var nombreMaquina = event.getNombreMaquina();
-            var categoria = event.getCategoria();
-            var marca = event.getMarca();
-            var serial = event.getSerial();
-
-            sede.maquina.reemplazarMaquina(maquinaId, nombreMaquina, categoria, marca, serial,
+            sede.maquina.reemplazarMaquina(event.getMaquinaId(), event.getNombreMaquina(),
+                    event.getCategoria(), event.getMarca(), event.getSerial(),
                     new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO));
         });
 
         apply((TorniqueteReemplazado event) -> {
-            var torniqueteId = event.getTorniqueteId();
-            sede.torniquete.reemplazarTorniquete(torniqueteId,
+            sede.torniquete.reemplazarTorniquete(event.getTorniqueteId(),
                     event.getLectorHuella(),
                     event.getSerial(),
                     new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO));
         });
 
         apply((TelefonoSedeCambiado event) -> {
-            var sedeId = event.getSedeId();
-            sede.cambiarTelefonoSede(sedeId, event.getTelefono());
+            sede.cambiarTelefonoSede(event.getSedeId(), event.getTelefono());
         });
     }
 }

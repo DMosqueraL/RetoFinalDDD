@@ -20,8 +20,6 @@ ldomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/agrega
 ndomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/agregadousuario/values/Ejercicio.java,a\e\ae240736efd66638fc1f958ebfc335bbe7dcb90c
 ›
 kdomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/agregadousuario/values/Estado.java,f\c\fc552bde8693b667b4c1024973f136202ab140d9
-ž
-ndomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/agregadousuario/EvaluacionFisica.java,d\e\dee723bbefcbc05dd111815e0479b7378e00fa0b
 §
 wdomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/agregadousuario/values/EvaluacionFisicaId.java,3\e\3e965067911c687dc320b22c11cc2d5310a81346
 ˜

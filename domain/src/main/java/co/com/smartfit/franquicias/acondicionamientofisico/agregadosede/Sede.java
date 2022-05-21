@@ -12,6 +12,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 
 public class Sede extends AggregateEvent<SedeId> {
+
     protected MaquinaId maquinaId;
     protected SedeId sedeId;
     protected NombreCompleto nombreSede;

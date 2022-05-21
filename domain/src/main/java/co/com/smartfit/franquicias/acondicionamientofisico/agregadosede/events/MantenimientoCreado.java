@@ -1,7 +1,7 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.events;
 
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.MantenimientoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.EstadoMantenimiento;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.MantenimientoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Fecha;
 import co.com.sofka.domain.generic.DomainEvent;
 

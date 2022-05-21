@@ -11,6 +11,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 
 public class Usuario extends AggregateEvent<UsuarioId> {
+
     protected EvaluacionFisicaId evaluacionFisicaId;
     protected ClaseId claseId;
     protected CuentaId cuentaId;

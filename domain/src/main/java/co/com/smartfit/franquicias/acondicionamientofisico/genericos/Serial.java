@@ -1,6 +1,5 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.genericos;
 
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Marca;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
