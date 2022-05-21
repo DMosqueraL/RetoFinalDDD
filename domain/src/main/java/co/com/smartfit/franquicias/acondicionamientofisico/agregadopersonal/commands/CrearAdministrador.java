@@ -1,6 +1,7 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.commands;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.AdministradorId;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Promocion;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
@@ -9,6 +10,7 @@ import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearAdministrador extends Command {
+    private final PersonalId personalId;
     private final AdministradorId administradorId;
     private final NombreCompleto nombreAdministrador;
     private final DocumentoIdentidad documentoAdministrador;
@@ -16,12 +18,13 @@ public class CrearAdministrador extends Command {
     private final Email emailAdministrador;
     private final Promocion promocion;
 
-    public CrearAdministrador(AdministradorId administradorId,
+    public CrearAdministrador(PersonalId personalId, AdministradorId administradorId,
                               NombreCompleto nombreAdministrador,
                               DocumentoIdentidad documentoAdministrador,
                               Telefono telefonoAdministrador,
                               Email emailAdministrador,
                               Promocion promocion) {
+        this.personalId = personalId;
         this.administradorId = administradorId;
         this.nombreAdministrador = nombreAdministrador;
         this.documentoAdministrador = documentoAdministrador;
@@ -32,6 +35,10 @@ public class CrearAdministrador extends Command {
 
     public AdministradorId getAdministradorId() {
         return administradorId;
+    }
+
+    public PersonalId getPersonalId() {
+        return personalId;
     }
 
     public NombreCompleto getNombreAdministrador() {

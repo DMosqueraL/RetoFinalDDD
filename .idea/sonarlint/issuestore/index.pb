@@ -1,6 +1,4 @@
 
-@
-business/pom.xml,d\4\d4ebdfff43bfaf86e620b416afb4835b5f67b594
 >
 domain/pom.xml,8\b\8b11330a6810846535e4b5ba2024ccfcee112862
 7
@@ -8,10 +6,6 @@
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-ö
-jdomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/genericos/DocumentoIdentidad.java,c\e\ceb4699b9c0bf22267b706e3e04ba9b0d59b91b3
-ç
-]domain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/genericos/Email.java,e\8\e85328d3fe119dcef769e6ed94fcaca520d37f45
 °
 qdomain/src/main/java/co/com/smartfit/franquicias/acondicionamientofisico/agregadousuario/events/CalculadoIMC.java,9\6\963f63dd52cc65b6cb7aae2edfe5d006446de92e
 ú

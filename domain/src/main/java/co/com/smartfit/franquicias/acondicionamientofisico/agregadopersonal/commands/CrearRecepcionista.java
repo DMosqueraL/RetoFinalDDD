@@ -1,6 +1,7 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.commands;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.HorarioDeTrabajo;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.RecepcionistaId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
@@ -9,22 +10,23 @@ import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearRecepcionista extends Command {
-
+    private final PersonalId personalId;
     private final RecepcionistaId recepcionistaId;
-    private final NombreCompleto nombreCompleto;
+    private final NombreCompleto nombreRecepcionista;
     private final DocumentoIdentidad documentoRecepcionista;
     private final Telefono telefonoRecepcionista;
     private final Email emailRecepcionista;
     private final HorarioDeTrabajo horarioDeTrabajo;
 
-    public CrearRecepcionista(RecepcionistaId recepcionistaId,
-                              NombreCompleto nombreCompleto,
+    public CrearRecepcionista(PersonalId personalId, RecepcionistaId recepcionistaId,
+                              NombreCompleto nombreRecepcionista,
                               DocumentoIdentidad documentoRecepcionista,
                               Telefono telefonoRecepcionista,
                               Email emailRecepcionista,
                               HorarioDeTrabajo horarioDeTrabajo) {
+        this.personalId = personalId;
         this.recepcionistaId = recepcionistaId;
-        this.nombreCompleto = nombreCompleto;
+        this.nombreRecepcionista = nombreRecepcionista;
         this.documentoRecepcionista = documentoRecepcionista;
         this.telefonoRecepcionista = telefonoRecepcionista;
         this.emailRecepcionista = emailRecepcionista;
@@ -35,8 +37,12 @@ public class CrearRecepcionista extends Command {
         return recepcionistaId;
     }
 
-    public NombreCompleto getNombreCompleto() {
-        return nombreCompleto;
+    public PersonalId getPersonalId() {
+        return personalId;
+    }
+
+    public NombreCompleto getNombreRecepcionista() {
+        return nombreRecepcionista;
     }
 
     public DocumentoIdentidad getDocumentoRecepcionista() {

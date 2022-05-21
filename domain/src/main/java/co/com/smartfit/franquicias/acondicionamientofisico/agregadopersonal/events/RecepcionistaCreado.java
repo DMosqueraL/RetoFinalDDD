@@ -11,14 +11,14 @@ import co.com.sofka.domain.generic.DomainEvent;
 public class RecepcionistaCreado extends DomainEvent {
 
     private final RecepcionistaId recepcionistaId;
-    private final NombreCompleto nombreCompleto;
+    private final NombreCompleto nombreRecepcionista;
     private final DocumentoIdentidad documentoRecepcionista;
     private final Telefono telefonoRecepcionista;
     private final Email emailRecepcionista;
 //    private final Cargo cargo;
     private final HorarioDeTrabajo horarioDeTrabajo;
     public RecepcionistaCreado(RecepcionistaId recepcionistaId,
-                               NombreCompleto nombreCompleto,
+                               NombreCompleto nombreRecepcionista,
                                DocumentoIdentidad documentoRecepcionista,
                                Telefono telefonoRecepcionista,
                                Email emailRecepcionista,
@@ -26,7 +26,7 @@ public class RecepcionistaCreado extends DomainEvent {
                                HorarioDeTrabajo horarioDeTrabajo) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.RecepcionistaCreado");
         this.recepcionistaId = recepcionistaId;
-        this.nombreCompleto = nombreCompleto;
+        this.nombreRecepcionista = nombreRecepcionista;
         this.documentoRecepcionista = documentoRecepcionista;
         this.telefonoRecepcionista = telefonoRecepcionista;
         this.emailRecepcionista = emailRecepcionista;
@@ -42,8 +42,8 @@ public class RecepcionistaCreado extends DomainEvent {
         return recepcionistaId;
     }
 
-    public NombreCompleto getNombreCompleto() {
-        return nombreCompleto;
+    public NombreCompleto getNombreRecepcionista() {
+        return nombreRecepcionista;
     }
 
     public DocumentoIdentidad getDocumentoRecepcionista() {

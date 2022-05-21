@@ -21,6 +21,10 @@ public class DocumentoIdentidad implements ValueObject<Long> {
         }
     }
 
+    public static DocumentoIdentidad of(Long numeroDocumento){
+        return new DocumentoIdentidad(numeroDocumento);
+    }
+
     @Override
     public Long value() {
         return numeroDocumento;

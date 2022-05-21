@@ -20,6 +20,9 @@ public class Email implements ValueObject<String> {
         }
 
     }
+    public static Email of(String url){
+        return new Email(url);
+    }
 
     @Override
     public String value() {

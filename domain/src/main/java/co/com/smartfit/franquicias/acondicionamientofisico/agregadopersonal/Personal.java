@@ -35,12 +35,11 @@ public class Personal extends AggregateEvent<PersonalId> {
                     DocumentoIdentidad documentoRecepcionista,
                     Telefono telefonoRecepcionista,
                     Email emailRecepcionista,
-                    Cargo cargo,
                     HorarioDeTrabajo horarioDeTrabajo) {
         super(personalId);
         appendChange(new RecepcionistaCreado(recepcionistaId,
                 nombreCompleto, documentoRecepcionista, telefonoRecepcionista,
-                emailRecepcionista, cargo, horarioDeTrabajo)).apply();
+                emailRecepcionista, horarioDeTrabajo)).apply();
         subscribe(new PersonalEventChange(this));
     }
 
@@ -50,11 +49,10 @@ public class Personal extends AggregateEvent<PersonalId> {
                     DocumentoIdentidad documentoMedico,
                     Telefono telefonoMedico,
                     Email emailMedico,
-                    Cargo cargo,
                     DiasALaborar diasALaborar) {
         super(personalId);
         appendChange(new MedicoCreado(medicoId, nombreMedico,
-                documentoMedico, telefonoMedico, emailMedico, cargo, diasALaborar)).apply();
+                documentoMedico, telefonoMedico, emailMedico, diasALaborar)).apply();
         subscribe(new PersonalEventChange(this));
     }
 
@@ -64,11 +62,10 @@ public class Personal extends AggregateEvent<PersonalId> {
                     DocumentoIdentidad documentoInstructor,
                     Telefono telefonoInstructor,
                     Email emailInstructor,
-                    Cargo cargo,
                     Cantidad cantidadUsuarios) {
         super(personalId);
         appendChange(new InstructorCreado(instructorId, nombreInstructor, documentoInstructor,
-                telefonoInstructor, emailInstructor, cargo, cantidadUsuarios)).apply();
+                telefonoInstructor, emailInstructor, cantidadUsuarios)).apply();
         subscribe(new PersonalEventChange(this));
     }
 
@@ -78,11 +75,10 @@ public class Personal extends AggregateEvent<PersonalId> {
                     DocumentoIdentidad documentoAdministrador,
                     Telefono telefonoAdministrador,
                     Email emailAdministrador,
-                    Cargo cargo,
                     Promocion promocion) {
         super(personalId);
         appendChange(new AdministradorCreado(administradorId, nombreAdministrador,
-                documentoAdministrador, telefonoAdministrador, emailAdministrador, cargo, promocion)).apply();
+                documentoAdministrador, telefonoAdministrador, emailAdministrador, promocion)).apply();
         subscribe(new PersonalEventChange(this));
     }
 

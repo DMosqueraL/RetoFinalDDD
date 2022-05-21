@@ -2,6 +2,7 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.com
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.DiasALaborar;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.MedicoId;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
@@ -9,6 +10,7 @@ import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearMedico extends Command {
+    private final PersonalId personalId;
 
     private final MedicoId medicoId;
     private final NombreCompleto nombreMedico;
@@ -17,10 +19,11 @@ public class CrearMedico extends Command {
     private final Email emailMedico;
     private final DiasALaborar diasALaborar;
 
-    public CrearMedico(MedicoId medicoId, NombreCompleto nombreMedico,
+    public CrearMedico(PersonalId personalId, MedicoId medicoId, NombreCompleto nombreMedico,
                        DocumentoIdentidad documentoMedico,
                        Telefono telefonoMedico, Email emailMedico,
                        DiasALaborar diasALaborar) {
+        this.personalId = personalId;
         this.medicoId = medicoId;
         this.nombreMedico = nombreMedico;
         this.documentoMedico = documentoMedico;
@@ -31,6 +34,10 @@ public class CrearMedico extends Command {
 
     public MedicoId getMedicoId() {
         return medicoId;
+    }
+
+    public PersonalId getPersonalId() {
+        return personalId;
     }
 
     public NombreCompleto getNombreMedico() {

@@ -17,7 +17,7 @@ public class PersonalEventChange extends EventChange {
 
         apply((RecepcionistaCreado event) -> {
             personal.recepcionista = new Recepcionista(event.getRecepcionistaId(),
-                    event.getNombreCompleto(), event.getDocumentoRecepcionista(),
+                    event.getNombreRecepcionista(), event.getDocumentoRecepcionista(),
                     event.getTelefonoRecepcionista(), event.getEmailRecepcionista(),
                     event.getHorarioDeTrabajo());
             });
