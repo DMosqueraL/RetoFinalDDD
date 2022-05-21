@@ -20,7 +20,7 @@ public class PersonalEventChange extends EventChange {
                     event.getNombreRecepcionista(), event.getDocumentoRecepcionista(),
                     event.getTelefonoRecepcionista(), event.getEmailRecepcionista(),
                     event.getHorarioDeTrabajo());
-            });
+        });
 
         apply((InstructorCreado event) -> {
             personal.instructor = new Instructor(event.getInstructorId(), event.getNombreInstructor(),

@@ -4,24 +4,24 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class LectorHuella implements ValueObject<Object> {
-    private final Object huella;
+public class LectorHuella implements ValueObject<String> {
+    private final String huella;
 
-    public LectorHuella(Object huella) {
+    public LectorHuella(String huella) {
 
         this.huella = Objects.requireNonNull(huella);
 
-        if (this.huella.equals("") || this.huella.equals(" ")){
+        if (this.huella.equals("") || this.huella.equals(" ")) {
             throw new IllegalArgumentException("La huella no puede estar en blanco o vacía");
         }
     }
 
-    public static LectorHuella of(Object huella){
+    public static LectorHuella of(String huella) {
         return new LectorHuella(huella);
     }
 
     @Override
-    public Object value() {
+    public String value() {
         return huella;
     }
 }

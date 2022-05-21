@@ -4,13 +4,13 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Promocion;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Entity;
 
 public class Administrador extends Entity<AdministradorId> {
 
-    protected NombreCompleto nombreAdministrador;
+    protected Nombre nombreAdministrador;
     protected DocumentoIdentidad documentoAdministrador;
     protected Telefono telefonoAdministrador;
     protected Email emailAdministrador;
@@ -18,7 +18,7 @@ public class Administrador extends Entity<AdministradorId> {
     protected Promocion promocion;
 
     public Administrador(AdministradorId administradorId,
-                         NombreCompleto nombreAdministrador,
+                         Nombre nombreAdministrador,
                          DocumentoIdentidad documentoAdministrador,
                          Telefono telefonoAdministrador,
                          Email emailAdministrador,

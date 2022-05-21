@@ -10,7 +10,7 @@ public class CuentaCreada extends DomainEvent {
     private final Mensualidad mensualidad;
     private final Plan plan;
 
-    public CuentaCreada(CuentaId cuentaId, Mensualidad mensualidad, Plan plan){
+    public CuentaCreada(CuentaId cuentaId, Mensualidad mensualidad, Plan plan) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario");
         this.cuentaId = cuentaId;
         this.mensualidad = mensualidad;

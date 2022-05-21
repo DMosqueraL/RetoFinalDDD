@@ -7,7 +7,7 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
@@ -15,13 +15,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CrearInstructorUseCaseTest {
+class CrearPersonalInstructorUseCaseTest {
 
-    private CrearInstructorUseCase useCase;
+    private CrearPersonalInstructorUseCase useCase;
 
     @BeforeEach
     public void setUp() {
-        useCase = new CrearInstructorUseCase();
+        useCase = new CrearPersonalInstructorUseCase();
     }
 
     @Test
@@ -29,7 +29,7 @@ class CrearInstructorUseCaseTest {
         //Arrange
         var personalId = PersonalId.of("xxxxx");
         var instructorId = InstructorId.of("zzzz");
-        var nombreInstructor = NombreCompleto.of("Raúl Alzate");
+        var nombreInstructor = Nombre.of("Raúl Alzate");
         var documentoInstructor = DocumentoIdentidad.of(112233445566L);
         var telefonoInstructor = Telefono.of("3310310310");
         var emailInstructor = Email.of("instructor@instructor");

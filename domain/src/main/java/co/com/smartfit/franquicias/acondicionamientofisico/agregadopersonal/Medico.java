@@ -4,13 +4,13 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.MedicoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Entity;
 
 public class Medico extends Entity<MedicoId> {
 
-    protected NombreCompleto nombreMedico;
+    protected Nombre nombreMedico;
     protected DocumentoIdentidad documentoMedico;
     protected Telefono telefonoMedico;
     protected Email emailMedico;
@@ -18,7 +18,7 @@ public class Medico extends Entity<MedicoId> {
     protected DiasALaborar diasALaborar;
 
     public Medico(MedicoId medicoId,
-                  NombreCompleto nombreMedico,
+                  Nombre nombreMedico,
                   DocumentoIdentidad documentoMedico,
                   Telefono telefonoMedico,
                   Email emailMedico,

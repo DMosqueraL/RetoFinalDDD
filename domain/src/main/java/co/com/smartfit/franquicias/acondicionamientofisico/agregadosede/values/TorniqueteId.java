@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class TorniqueteId extends Identity {
 
-    public TorniqueteId(String id){
+    public TorniqueteId(String id) {
         super(id);
     }
 
@@ -12,7 +12,7 @@ public class TorniqueteId extends Identity {
 
     }
 
-    public static TorniqueteId of(String id){
+    public static TorniqueteId of(String id) {
         return new TorniqueteId(id);
     }
 }

@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class RecepcionistaId extends Identity {
 
-    public RecepcionistaId(String id){
+    public RecepcionistaId(String id) {
         super(id);
     }
 
@@ -13,7 +13,7 @@ public class RecepcionistaId extends Identity {
 
     }
 
-    public static RecepcionistaId of(String id){
+    public static RecepcionistaId of(String id) {
         return new RecepcionistaId(id);
     }
 }

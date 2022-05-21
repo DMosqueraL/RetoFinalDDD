@@ -9,6 +9,7 @@ public class CalculadoIMC extends DomainEvent {
     private final EvaluacionFisicaId evaluacionFisicaId;
     private final Peso peso;
     private final Altura altura;
+
     public CalculadoIMC(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.CalculadoIMC");
         this.evaluacionFisicaId = evaluacionFisicaId;

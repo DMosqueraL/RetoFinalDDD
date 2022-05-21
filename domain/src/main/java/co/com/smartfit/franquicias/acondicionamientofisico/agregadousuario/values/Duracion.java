@@ -21,7 +21,7 @@ public class Duracion implements ValueObject<Integer> {
         }
     }
 
-    public static Duracion of(Integer duracion){
+    public static Duracion of(Integer duracion) {
         return new Duracion(duracion);
     }
 

@@ -3,19 +3,19 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.comm
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Estado;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.UsuarioId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearUsuario extends Command {
     private final UsuarioId usuarioId;
-    private final NombreCompleto nombreUsuario;
+    private final Nombre nombreUsuario;
     private final Telefono telefono;
     private final Email email;
     private final Estado estado;
 
     public CrearUsuario(UsuarioId usuarioId,
-                        NombreCompleto nombreUsuario,
+                        Nombre nombreUsuario,
                         Telefono telefono,
                         Email email,
                         Estado estado) {
@@ -30,7 +30,7 @@ public class CrearUsuario extends Command {
         return usuarioId;
     }
 
-    public NombreCompleto getNombreUsuario() {
+    public Nombre getNombreUsuario() {
         return nombreUsuario;
     }
 

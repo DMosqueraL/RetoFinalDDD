@@ -20,7 +20,7 @@ public class Repeticion implements ValueObject<Integer> {
         }
     }
 
-    public static Repeticion of(Integer repeticion){
+    public static Repeticion of(Integer repeticion) {
         return new Repeticion(repeticion);
     }
 

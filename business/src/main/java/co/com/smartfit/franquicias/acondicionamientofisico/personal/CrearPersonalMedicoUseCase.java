@@ -7,7 +7,7 @@ import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 
 
-public class CrearMedicoUseCase extends UseCase<RequestCommand<CrearMedico>, ResponseEvents> {
+public class CrearPersonalMedicoUseCase extends UseCase<RequestCommand<CrearMedico>, ResponseEvents> {
 
     @Override
     public void executeUseCase(RequestCommand<CrearMedico> crearMedicoRequestCommand) {

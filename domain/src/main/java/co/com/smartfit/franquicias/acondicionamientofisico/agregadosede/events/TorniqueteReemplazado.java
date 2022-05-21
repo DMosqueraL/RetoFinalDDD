@@ -9,6 +9,7 @@ public class TorniqueteReemplazado extends DomainEvent {
     private final TorniqueteId torniqueteId;
     private final LectorHuella lectorHuella;
     private final Serial serial;
+
     public TorniqueteReemplazado(TorniqueteId torniqueteId, LectorHuella lectorHuella, Serial serial) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadosede");
         this.torniqueteId = torniqueteId;

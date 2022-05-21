@@ -6,7 +6,7 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 
-public class CrearAdministradorUseCase extends UseCase<RequestCommand<CrearAdministrador>, ResponseEvents> {
+public class CrearPersonalAdministradorUseCase extends UseCase<RequestCommand<CrearAdministrador>, ResponseEvents> {
 
     @Override
     public void executeUseCase(RequestCommand<CrearAdministrador> crearAdministradorRequestCommand) {

@@ -20,7 +20,7 @@ public class Serie implements ValueObject<Integer> {
         }
     }
 
-    public static Serie of(Integer serie){
+    public static Serie of(Integer serie) {
         return new Serie(serie);
     }
 

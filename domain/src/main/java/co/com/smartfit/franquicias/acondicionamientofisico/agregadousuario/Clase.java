@@ -3,18 +3,18 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.ClaseId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Duracion;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Rutina;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
 public class Clase extends Entity<ClaseId> {
     protected ClaseId claseId;
-    protected NombreCompleto nombreClase;
+    protected Nombre nombreClase;
     protected Rutina rutina;
     protected Duracion duracion;
 
 
     public Clase(ClaseId claseId,
-                 NombreCompleto nombreClase,
+                 Nombre nombreClase,
                  Rutina rutina,
                  Duracion duracion) {
         super(claseId);
@@ -23,8 +23,8 @@ public class Clase extends Entity<ClaseId> {
         this.duracion = duracion;
     }
 
-    public void cambiarNombreDeLaClase(ClaseId claseId, NombreCompleto nombreClase){
+    public void cambiarNombreDeLaClase(ClaseId claseId, Nombre nombreClase) {
         this.claseId = ClaseId.of(claseId.value());
-        this.nombreClase = NombreCompleto.of(nombreClase.value());
+        this.nombreClase = Nombre.of(nombreClase.value());
     }
 }

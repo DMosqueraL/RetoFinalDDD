@@ -15,6 +15,10 @@ public class Fecha implements ValueObject<Fecha.Pros> {
         this.dia = Objects.requireNonNull(dia);
     }
 
+    public static Fecha of(LocalDateTime hora, LocalDate dia) {
+        return new Fecha(hora, dia);
+    }
+
     @Override
     public Pros value() {
         return new Pros() {
@@ -30,12 +34,9 @@ public class Fecha implements ValueObject<Fecha.Pros> {
         };
     }
 
-    public static Fecha of(LocalDateTime hora, LocalDate dia){
-        return new Fecha(hora, dia);
-    }
-
     public interface Pros {
         LocalDateTime hora();
+
         LocalDate dia();
     }
 }

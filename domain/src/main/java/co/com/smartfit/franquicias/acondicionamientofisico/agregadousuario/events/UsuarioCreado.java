@@ -2,24 +2,25 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.even
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.UsuarioId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class UsuarioCreado extends DomainEvent {
 
-    private final NombreCompleto nombreCompleto;
+    private final Nombre nombre;
     private final Telefono telefono;
     private final Email email;
-    public UsuarioCreado(UsuarioId usuarioId, NombreCompleto nombreCompleto, Telefono telefono, Email email) {
+
+    public UsuarioCreado(UsuarioId usuarioId, Nombre nombre, Telefono telefono, Email email) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.UsuarioCreado");
-        this.nombreCompleto = nombreCompleto;
+        this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
     }
 
-    public NombreCompleto getNombreCompleto() {
-        return nombreCompleto;
+    public Nombre getNombreCompleto() {
+        return nombre;
     }
 
     public Telefono getTelefono() {

@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class PersonalId extends Identity {
 
-    public PersonalId(String id){
+    public PersonalId(String id) {
         super(id);
     }
 
@@ -13,7 +13,7 @@ public class PersonalId extends Identity {
 
     }
 
-    public static PersonalId of(String id){
+    public static PersonalId of(String id) {
         return new PersonalId(id);
     }
 }

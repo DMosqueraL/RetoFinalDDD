@@ -16,7 +16,7 @@ public class Cargo implements ValueObject<Cargo.Tipo> {
         }
     }
 
-    public static Cargo of(Cargo.Tipo cargo){
+    public static Cargo of(Cargo.Tipo cargo) {
 
         return new Cargo(cargo);
     }
@@ -26,7 +26,7 @@ public class Cargo implements ValueObject<Cargo.Tipo> {
         return cargo;
     }
 
-    public enum Tipo{
+    public enum Tipo {
         RECEPCIONISTA, INSTRUCTOR, MEDICO, ADMINISTRADOR;
     }
 }

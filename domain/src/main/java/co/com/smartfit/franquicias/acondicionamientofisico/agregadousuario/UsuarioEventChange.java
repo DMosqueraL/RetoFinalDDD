@@ -9,7 +9,7 @@ public class UsuarioEventChange extends EventChange {
     public UsuarioEventChange(Usuario usuario) {
 
         apply((UsuarioCreado event) -> {
-            usuario.nombreCompleto = event.getNombreCompleto();
+            usuario.nombre = event.getNombreCompleto();
             usuario.telefono = event.getTelefono();
             usuario.email = event.getEmail();
             usuario.estado = new Estado(Estado.Tipo.ACTIVO);

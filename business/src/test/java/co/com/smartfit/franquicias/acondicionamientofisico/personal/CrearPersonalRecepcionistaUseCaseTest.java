@@ -1,14 +1,13 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.personal;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.commands.CrearRecepcionista;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.AdministradorCreado;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.RecepcionistaCreado;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.HorarioDeTrabajo;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.RecepcionistaId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
@@ -16,15 +15,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+class CrearPersonalRecepcionistaUseCaseTest {
 
-class CrearRecepcionistaUseCaseTest {
-
-    private CrearRecepcionistaUseCase useCase;
+    private CrearPersonalRecepcionistaUseCase useCase;
 
     @BeforeEach
     public void setUp() {
-        useCase = new CrearRecepcionistaUseCase();
+        useCase = new CrearPersonalRecepcionistaUseCase();
     }
 
     @Test
@@ -32,7 +29,7 @@ class CrearRecepcionistaUseCaseTest {
         //Arrange
         var personalId = PersonalId.of("xxxxx");
         var recepcionistaId = RecepcionistaId.of("dddd");
-        var nombreRecepcionista = NombreCompleto.of("Cecilia Vélez");
+        var nombreRecepcionista = Nombre.of("Cecilia Vélez");
         var documentoRecepcionista = DocumentoIdentidad.of(32100200L);
         var telefonoRecepcionista = Telefono.of("6046011010");
         var emailRecepcionista = Email.of("recepcion@recepcion");

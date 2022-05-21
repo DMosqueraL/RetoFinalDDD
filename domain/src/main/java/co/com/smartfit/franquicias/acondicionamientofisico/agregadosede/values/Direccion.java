@@ -11,16 +11,16 @@ public class Direccion implements ValueObject<String> {
 
         this.direccion = Objects.requireNonNull(direccion);
 
-        if (this.direccion.isBlank()){
+        if (this.direccion.isBlank()) {
             throw new IllegalArgumentException("La dirección de la sede no puede estar en blanco");
         }
 
-        if(this.direccion.length() > 50){
+        if (this.direccion.length() > 50) {
             throw new IllegalArgumentException("La dirección de la sede no permite mas de 50 caracteres");
         }
     }
 
-    public static Direccion of(String direccion){
+    public static Direccion of(String direccion) {
         return new Direccion(direccion);
     }
 

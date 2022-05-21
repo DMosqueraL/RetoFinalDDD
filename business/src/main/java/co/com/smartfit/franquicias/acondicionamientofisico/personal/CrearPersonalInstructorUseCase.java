@@ -6,7 +6,7 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 
-public class CrearInstructorUseCase extends UseCase<RequestCommand<CrearInstructor>, ResponseEvents> {
+public class CrearPersonalInstructorUseCase extends UseCase<RequestCommand<CrearInstructor>, ResponseEvents> {
     @Override
     public void executeUseCase(RequestCommand<CrearInstructor> crearInstructorRequestCommand) {
         var command = crearInstructorRequestCommand.getCommand();

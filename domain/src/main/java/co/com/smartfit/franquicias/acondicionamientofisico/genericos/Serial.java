@@ -8,7 +8,7 @@ public class Serial implements ValueObject<String> {
 
     private final String serial;
 
-    public Serial (String serial){
+    public Serial(String serial) {
         this.serial = Objects.requireNonNull(serial);
 
         if (this.serial.isBlank()) {
@@ -16,9 +16,10 @@ public class Serial implements ValueObject<String> {
         }
     }
 
-    public static Serial of(String serial){
+    public static Serial of(String serial) {
         return new Serial(serial);
     }
+
     @Override
     public String value() {
         return serial;

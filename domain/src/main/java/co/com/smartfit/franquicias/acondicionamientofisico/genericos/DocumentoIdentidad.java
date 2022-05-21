@@ -12,16 +12,16 @@ public class DocumentoIdentidad implements ValueObject<Long> {
 
         this.numeroDocumento = Objects.requireNonNull(numeroDocumento);
 
-        if (String.valueOf(this.numeroDocumento).isBlank()){
+        if (String.valueOf(this.numeroDocumento).isBlank()) {
             throw new IllegalArgumentException("El número de documento no puede estar vacío");
         }
 
-        if (!this.numeroDocumento.equals(this.numeroDocumento.longValue())){
+        if (!this.numeroDocumento.equals(this.numeroDocumento.longValue())) {
             throw new IllegalArgumentException("El número de documento no puede tener decimales");
         }
     }
 
-    public static DocumentoIdentidad of(Long numeroDocumento){
+    public static DocumentoIdentidad of(Long numeroDocumento) {
         return new DocumentoIdentidad(numeroDocumento);
     }
 

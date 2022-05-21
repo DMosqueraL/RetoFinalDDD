@@ -10,16 +10,16 @@ public class Ejercicio implements ValueObject<String> {
     public Ejercicio(String documento) {
         this.ejercicio = Objects.requireNonNull(documento);
 
-        if(this.ejercicio.isBlank()){
+        if (this.ejercicio.isBlank()) {
             throw new IllegalArgumentException("El ejercicio no puede estar en blanco.");
         }
 
-        if(this.ejercicio.isEmpty()){
+        if (this.ejercicio.isEmpty()) {
             throw new IllegalArgumentException("El ejercicio no puede estar vacío");
         }
     }
 
-    public static Ejercicio of(String ejercicio){
+    public static Ejercicio of(String ejercicio) {
         return new Ejercicio(ejercicio);
     }
 

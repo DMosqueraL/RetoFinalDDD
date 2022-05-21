@@ -6,7 +6,7 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 
-public class CrearRecepcionistaUseCase extends UseCase<RequestCommand<CrearRecepcionista>, ResponseEvents> {
+public class CrearPersonalRecepcionistaUseCase extends UseCase<RequestCommand<CrearRecepcionista>, ResponseEvents> {
 
     @Override
     public void executeUseCase(RequestCommand<CrearRecepcionista> crearRecepcionistaRequestCommand) {

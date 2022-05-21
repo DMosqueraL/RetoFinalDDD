@@ -18,7 +18,7 @@ public class Estado implements ValueObject<Estado.Tipo> {
         return estado;
     }
 
-    public enum Tipo{
+    public enum Tipo {
         ACTIVO, INACTIVO;
     }
 }

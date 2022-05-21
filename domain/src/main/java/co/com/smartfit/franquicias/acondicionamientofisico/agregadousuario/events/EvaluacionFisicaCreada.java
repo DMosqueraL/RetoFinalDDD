@@ -13,7 +13,7 @@ public class EvaluacionFisicaCreada extends DomainEvent {
     private final Altura altura;
     private final IMC imc;
 
-    public EvaluacionFisicaCreada(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura, IMC imc){
+    public EvaluacionFisicaCreada(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura, IMC imc) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.EvaluacionFisicaCreada");
         this.evaluacionFisicaId = evaluacionFisicaId;
         this.peso = peso;

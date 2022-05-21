@@ -11,16 +11,17 @@ public class Cantidad implements ValueObject<String> {
     public Cantidad(String cantidad) {
         this.cantidad = Objects.requireNonNull(cantidad);
 
-        if (this.cantidad.isBlank()){
+        if (this.cantidad.isBlank()) {
             throw new IllegalArgumentException("La cantidad de usuarios no puede estar vacio");
         }
 
-        if(this.cantidad.length() <= 0){
+        if (this.cantidad.length() <= 0) {
             throw new IllegalArgumentException("La cantidad de usuarios no puede ser cero o negativo");
         }
 
     }
-    public static Cantidad of(String cantidad){
+
+    public static Cantidad of(String cantidad) {
         return new Cantidad(cantidad);
     }
 

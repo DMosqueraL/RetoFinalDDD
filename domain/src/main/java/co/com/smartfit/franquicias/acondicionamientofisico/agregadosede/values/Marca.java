@@ -11,16 +11,16 @@ public class Marca implements ValueObject<String> {
 
         this.marca = Objects.requireNonNull(marca);
 
-        if (this.marca.isBlank()){
+        if (this.marca.isBlank()) {
             throw new IllegalArgumentException("La marca de la máquina no puede estar en blanco");
         }
 
-        if(this.marca.length() > 50){
+        if (this.marca.length() > 50) {
             throw new IllegalArgumentException("La marca de la máquina no permite mas de 50 caracteres");
         }
     }
 
-    public static Marca of(String marca){
+    public static Marca of(String marca) {
         return new Marca(marca);
     }
 

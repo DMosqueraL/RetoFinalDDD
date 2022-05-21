@@ -15,7 +15,7 @@ public class Plan implements ValueObject<Plan.Tipo> {
         }
     }
 
-    public static Plan of(Tipo plan){
+    public static Plan of(Tipo plan) {
         return new Plan(plan);
     }
 
@@ -24,7 +24,7 @@ public class Plan implements ValueObject<Plan.Tipo> {
         return plan;
     }
 
-    public enum Tipo{
+    public enum Tipo {
         PLAN_BÁSICO, PLAN_GOLD, PLAN_PREMIUN;
     }
 }

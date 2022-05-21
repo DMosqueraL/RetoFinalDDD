@@ -8,11 +8,10 @@ public class SedeEventChange extends EventChange {
     public SedeEventChange(Sede sede) {
 
         apply((SedeCreada event) -> {
-            sede.nombreSede =  event.getNombreSede();
+            sede.nombreSede = event.getNombreSede();
             sede.ciudad = event.getCiudad();
             sede.direccion = event.getDireccion();
             sede.telefono = event.getTelefono();
-            sede.estadoMantenimiento = new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO);
         });
 
         apply((MaquinaCreada event) -> {
@@ -22,37 +21,28 @@ public class SedeEventChange extends EventChange {
             var marca = event.getMarca();
             var serial = event.getSerial();
 
-            sede.maquina = new Maquina(maquinaId, nombreMaquina, categoria, marca, serial,
-                    new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO));
+            sede.maquina = new Maquina(maquinaId, nombreMaquina, categoria, marca, serial);
         });
 
         apply((TorniqueteCreado event) -> {
             var torniqueteId = event.getTorniqueteId();
             var lectorHuella = event.getLectorHuella();
             var serial = event.getSerial();
-            var estado = new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO);
 
-            sede.torniquete = new Torniquete(torniqueteId, lectorHuella, serial, estado);
+            sede.torniquete = new Torniquete(torniqueteId, lectorHuella, serial);
         });
 
-        apply((MantenimientoCreado event) -> {
-            var mantenimientoId = event.getMantenimientoId();
-            sede.mantenimiento = new Mantenimiento(mantenimientoId,
-                    event.getTipoMantenimiento(),
-                    event.getFecha());
-        });
-
-        apply((MaquinaReemplazada event) -> {
-            sede.maquina.reemplazarMaquina(event.getMaquinaId(), event.getNombreMaquina(),
+        apply((MaquinaAMantenimientoAsignada event) -> {
+            sede.maquina.asignarMaquinaAMantenimiento(event.getMaquinaId(), event.getNombreMaquina(),
                     event.getCategoria(), event.getMarca(), event.getSerial(),
-                    new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO));
+                    new EstadoMantenimiento(EstadoMantenimiento.Tipo.EN_MANTENIMIENTO), event.getFecha());
         });
 
         apply((TorniqueteReemplazado event) -> {
             sede.torniquete.reemplazarTorniquete(event.getTorniqueteId(),
                     event.getLectorHuella(),
                     event.getSerial(),
-                    new EstadoMantenimiento(EstadoMantenimiento.Tipo.BUEN_ESTADO));
+                    new EstadoMantenimiento(EstadoMantenimiento.Tipo.EN_BUEN_ESTADO));
         });
 
         apply((TelefonoSedeCambiado event) -> {

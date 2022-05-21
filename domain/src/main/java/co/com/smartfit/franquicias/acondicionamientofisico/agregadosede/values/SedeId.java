@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class SedeId extends Identity {
 
-    public SedeId(String id){
+    public SedeId(String id) {
         super(id);
     }
 
@@ -12,7 +12,7 @@ public class SedeId extends Identity {
 
     }
 
-    public static SedeId of(String id){
+    public static SedeId of(String id) {
         return new SedeId(id);
     }
 }

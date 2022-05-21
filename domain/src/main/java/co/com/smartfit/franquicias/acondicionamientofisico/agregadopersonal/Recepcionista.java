@@ -4,13 +4,13 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.RecepcionistaId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Entity;
 
 public class Recepcionista extends Entity<RecepcionistaId> {
 
-    protected NombreCompleto nombreRecepcionista;
+    protected Nombre nombreRecepcionista;
     protected DocumentoIdentidad documentoRecepcionista;
     protected Telefono telefonoRecepcionista;
     protected Email emailRecepcionista;
@@ -18,7 +18,7 @@ public class Recepcionista extends Entity<RecepcionistaId> {
     protected HorarioDeTrabajo horarioDeTrabajo;
 
     public Recepcionista(RecepcionistaId recepcionistaId,
-                         NombreCompleto nombreRecepcionista,
+                         Nombre nombreRecepcionista,
                          DocumentoIdentidad documentoRecepcionista,
                          Telefono telefonoRecepcionista,
                          Email emailRecepcionista,

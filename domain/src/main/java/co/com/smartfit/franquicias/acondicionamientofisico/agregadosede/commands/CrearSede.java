@@ -3,19 +3,19 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.command
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Ciudad;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Direccion;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.SedeId;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearSede extends Command {
 
     private final SedeId sedeId;
-    private final NombreCompleto nombreSede;
+    private final Nombre nombreSede;
     private final Ciudad ciudad;
     private final Direccion direccion;
     private final Telefono telefono;
 
-    public CrearSede(SedeId sedeId, NombreCompleto nombreSede,
+    public CrearSede(SedeId sedeId, Nombre nombreSede,
                      Ciudad ciudad, Direccion direccion, Telefono telefono) {
         this.sedeId = sedeId;
         this.nombreSede = nombreSede;
@@ -28,7 +28,7 @@ public class CrearSede extends Command {
         return sedeId;
     }
 
-    public NombreCompleto getNombreSede() {
+    public Nombre getNombreSede() {
         return nombreSede;
     }
 

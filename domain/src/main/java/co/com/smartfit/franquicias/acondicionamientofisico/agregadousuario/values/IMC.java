@@ -20,7 +20,7 @@ public class IMC implements ValueObject<Double> {
         }
     }
 
-    public static IMC of(Double imc){
+    public static IMC of(Double imc) {
         return new IMC(imc);
     }
 

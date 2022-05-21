@@ -3,16 +3,16 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.comm
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.ClaseId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Duracion;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Rutina;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearClase extends Command {
     private final ClaseId claseId;
-    private final NombreCompleto nombreClase;
+    private final Nombre nombreClase;
     private final Rutina rutina;
     private final Duracion duracion;
 
-    public CrearClase(ClaseId claseId, NombreCompleto nombreClase, Rutina rutina, Duracion duracion) {
+    public CrearClase(ClaseId claseId, Nombre nombreClase, Rutina rutina, Duracion duracion) {
         this.claseId = claseId;
         this.nombreClase = nombreClase;
         this.rutina = rutina;
@@ -23,7 +23,7 @@ public class CrearClase extends Command {
         return claseId;
     }
 
-    public NombreCompleto getNombreClase() {
+    public Nombre getNombreClase() {
         return nombreClase;
     }
 

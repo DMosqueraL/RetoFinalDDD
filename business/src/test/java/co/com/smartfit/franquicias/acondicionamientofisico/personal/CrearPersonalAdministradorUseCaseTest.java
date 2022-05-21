@@ -7,7 +7,7 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Promocion;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
@@ -15,15 +15,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+class CrearPersonalAdministradorUseCaseTest {
 
-class CrearAdministradorUseCaseTest {
-
-    private CrearAdministradorUseCase useCase;
+    private CrearPersonalAdministradorUseCase useCase;
 
     @BeforeEach
     public void setUp() {
-        useCase = new CrearAdministradorUseCase();
+        useCase = new CrearPersonalAdministradorUseCase();
     }
 
     @Test
@@ -31,7 +29,7 @@ class CrearAdministradorUseCaseTest {
         //Arrange
         var personalId = PersonalId.of("xxxxx");
         var administradorId = AdministradorId.of("qqqq");
-        var nombreAdministrador = NombreCompleto.of("Manuel Salas");
+        var nombreAdministrador = Nombre.of("Manuel Salas");
         var documentoAdministrador = DocumentoIdentidad.of(1346798552L);
         var telefonoAdministrador = Telefono.of("3003013233");
         var emailAdministrador = Email.of("admin@admin");

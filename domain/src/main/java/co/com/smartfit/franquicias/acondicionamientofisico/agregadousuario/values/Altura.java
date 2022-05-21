@@ -21,7 +21,7 @@ public class Altura implements ValueObject<Double> {
         }
     }
 
-    public static Altura of(Double altura){
+    public static Altura of(Double altura) {
         return new Altura(altura);
     }
 

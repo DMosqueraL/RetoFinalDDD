@@ -3,26 +3,26 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.even
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.ClaseId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Duracion;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Rutina;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class ClaseCreada extends DomainEvent {
 
-    protected final NombreCompleto nombreClase;
+    protected final Nombre nombreClase;
     protected final Rutina rutina;
     protected final Duracion duracion;
 
     public ClaseCreada(ClaseId claseId,
-                       NombreCompleto nombreClase,
+                       Nombre nombreClase,
                        Rutina rutina,
-                       Duracion duracion){
+                       Duracion duracion) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.ClaseCreada");
-        this.nombreClase = NombreCompleto.of(nombreClase.value());
+        this.nombreClase = Nombre.of(nombreClase.value());
         this.rutina = rutina;
         this.duracion = Duracion.of(duracion.value());
     }
 
-    public NombreCompleto getNombreClase() {
+    public Nombre getNombreClase() {
         return nombreClase;
     }
 

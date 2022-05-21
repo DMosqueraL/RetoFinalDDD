@@ -4,20 +4,21 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.MedicoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class MedicoCreado extends DomainEvent {
     private final MedicoId medicoId;
-    private final NombreCompleto nombreMedico;
+    private final Nombre nombreMedico;
     private final DocumentoIdentidad documentoMedico;
     private final Telefono telefonoMedico;
     private final Email emailMedico;
-   /* private final Cargo cargo;*/
+    /* private final Cargo cargo;*/
     private final DiasALaborar diasALaborar;
+
     public MedicoCreado(MedicoId medicoId,
-                        NombreCompleto nombreMedico,
+                        Nombre nombreMedico,
                         DocumentoIdentidad documentoMedico,
                         Telefono telefonoMedico,
                         Email emailMedico,
@@ -42,7 +43,7 @@ public class MedicoCreado extends DomainEvent {
         return medicoId;
     }
 
-    public NombreCompleto getNombreMedico() {
+    public Nombre getNombreMedico() {
         return nombreMedico;
     }
 

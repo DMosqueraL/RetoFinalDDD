@@ -7,7 +7,7 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
@@ -15,21 +15,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CrearMedicoUseCaseTest {
+class CrearPersonalMedicoUseCaseTest {
 
-    private CrearMedicoUseCase useCase;
+    private CrearPersonalMedicoUseCase useCase;
 
     @BeforeEach
-    public void setUp(){
-        useCase = new CrearMedicoUseCase();
+    public void setUp() {
+        useCase = new CrearPersonalMedicoUseCase();
     }
 
     @Test
-    public void crearMedicoHappyPass(){
+    public void crearMedicoHappyPass() {
         //Arrange
         var personalId = PersonalId.of("xxxxx");
         var medicoId = MedicoId.of("yyyy");
-        var nombreMedico = NombreCompleto.of("Doris Mosquera");
+        var nombreMedico = Nombre.of("Doris Mosquera");
         var documentoMedico = DocumentoIdentidad.of(102030405060L);
         var telefonoMedico = Telefono.of("3163161616");
         var emailMedico = Email.of("medico@medico");
@@ -45,7 +45,7 @@ class CrearMedicoUseCaseTest {
                 .getDomainEvents();
 
         //Asserts
-        var medicoCreado = (MedicoCreado)events.get(0);
+        var medicoCreado = (MedicoCreado) events.get(0);
         Assertions.assertEquals("xxxxx", medicoCreado.aggregateRootId());
         Assertions.assertEquals("yyyy", medicoCreado.getMedicoId().value());
         Assertions.assertEquals("Doris Mosquera", medicoCreado.getNombreMedico().value());

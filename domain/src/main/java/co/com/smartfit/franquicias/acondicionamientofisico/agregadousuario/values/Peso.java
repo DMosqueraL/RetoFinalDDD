@@ -20,7 +20,7 @@ public class Peso implements ValueObject<Double> {
         }
     }
 
-    public static Peso of(Double peso){
+    public static Peso of(Double peso) {
         return new Peso(peso);
     }
 

@@ -1,15 +1,15 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.commands;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.ClaseId;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.sofka.domain.generic.Command;
 
 public class CambiarNombreDeLaClase extends Command {
 
     private final ClaseId claseId;
-    private final NombreCompleto nombreClase;
+    private final Nombre nombreClase;
 
-    public CambiarNombreDeLaClase(ClaseId claseId, NombreCompleto nombreClase) {
+    public CambiarNombreDeLaClase(ClaseId claseId, Nombre nombreClase) {
         this.claseId = claseId;
         this.nombreClase = nombreClase;
     }
@@ -18,7 +18,7 @@ public class CambiarNombreDeLaClase extends Command {
         return claseId;
     }
 
-    public NombreCompleto getNombreClase() {
+    public Nombre getNombreClase() {
         return nombreClase;
     }
 }

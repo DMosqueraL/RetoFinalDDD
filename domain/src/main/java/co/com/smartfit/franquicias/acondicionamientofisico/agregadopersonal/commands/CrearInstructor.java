@@ -5,7 +5,7 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.valu
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.NombreCompleto;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.Command;
 
@@ -13,14 +13,14 @@ public class CrearInstructor extends Command {
 
     private final PersonalId personalId;
     private final InstructorId instructorId;
-    private final NombreCompleto nombreInstructor;
+    private final Nombre nombreInstructor;
     private final DocumentoIdentidad documentoInstructor;
     private final Telefono telefonoInstructor;
     private final Email emailInstructor;
     private final Cantidad cantidadUsuarios;
 
     public CrearInstructor(PersonalId personalId, InstructorId instructorId,
-                           NombreCompleto nombreInstructor,
+                           Nombre nombreInstructor,
                            DocumentoIdentidad documentoInstructor,
                            Telefono telefonoInstructor, Email emailInstructor,
                            Cantidad cantidadUsuarios) {
@@ -38,7 +38,7 @@ public class CrearInstructor extends Command {
         return instructorId;
     }
 
-    public NombreCompleto getNombreInstructor() {
+    public Nombre getNombreInstructor() {
         return nombreInstructor;
     }
 
@@ -58,7 +58,7 @@ public class CrearInstructor extends Command {
         return cantidadUsuarios;
     }
 
-        public PersonalId getPersonalId() {
-            return personalId;
-        }
+    public PersonalId getPersonalId() {
+        return personalId;
+    }
 }

@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class EvaluacionFisicaId extends Identity {
 
-    public EvaluacionFisicaId(String id){
+    public EvaluacionFisicaId(String id) {
         super(id);
     }
 
@@ -13,7 +13,7 @@ public class EvaluacionFisicaId extends Identity {
 
     }
 
-    public static EvaluacionFisicaId of(String id){
+    public static EvaluacionFisicaId of(String id) {
         return new EvaluacionFisicaId(id);
     }
 }

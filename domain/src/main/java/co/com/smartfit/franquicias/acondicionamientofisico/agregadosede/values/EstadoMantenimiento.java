@@ -16,7 +16,7 @@ public class EstadoMantenimiento implements ValueObject<EstadoMantenimiento.Tipo
         }
     }
 
-    public static EstadoMantenimiento of(EstadoMantenimiento.Tipo tipoMantenimiento){
+    public static EstadoMantenimiento of(EstadoMantenimiento.Tipo tipoMantenimiento) {
 
         return new EstadoMantenimiento(tipoMantenimiento);
     }
@@ -26,7 +26,7 @@ public class EstadoMantenimiento implements ValueObject<EstadoMantenimiento.Tipo
         return tipoMantenimiento;
     }
 
-    public enum Tipo{
-        BUEN_ESTADO, PENDIENTE, EN_MANTENIMIENTO, REALIZADO;
+    public enum Tipo {
+        EN_BUEN_ESTADO, EN_ESPERA, EN_MANTENIMIENTO, MALA;
     }
 }

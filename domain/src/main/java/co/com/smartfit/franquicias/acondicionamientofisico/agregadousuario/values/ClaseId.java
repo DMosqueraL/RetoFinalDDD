@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class ClaseId extends Identity {
 
-    public ClaseId(String id){
+    public ClaseId(String id) {
         super(id);
     }
 
@@ -13,7 +13,7 @@ public class ClaseId extends Identity {
 
     }
 
-    public static ClaseId of(String id){
+    public static ClaseId of(String id) {
         return new ClaseId(id);
     }
 }

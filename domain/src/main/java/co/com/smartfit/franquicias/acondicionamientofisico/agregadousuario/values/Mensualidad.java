@@ -19,7 +19,7 @@ public class Mensualidad implements ValueObject<Double> {
         }
     }
 
-    public static Mensualidad of(Double mensualidad){
+    public static Mensualidad of(Double mensualidad) {
         return new Mensualidad(mensualidad);
     }
 

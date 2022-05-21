@@ -14,17 +14,16 @@ public class Torniquete extends Entity<TorniqueteId> {
 
 
     public Torniquete(TorniqueteId torniqueteId, LectorHuella lectorHuella,
-                      Serial serial, EstadoMantenimiento estadoMantenimiento) {
+                      Serial serial) {
         super(torniqueteId);
         this.lectorHuella = lectorHuella;
         this.serial = serial;
-        this.estadoMantenimiento = estadoMantenimiento;
     }
 
     public void reemplazarTorniquete(TorniqueteId torniqueteId,
                                      LectorHuella lectorHuella,
                                      Serial serial,
-                                     EstadoMantenimiento estadoMantenimiento){
+                                     EstadoMantenimiento estadoMantenimiento) {
         this.torniqueteId = TorniqueteId.of(torniqueteId.value());
         this.lectorHuella = LectorHuella.of(lectorHuella.value());
         this.serial = Serial.of(serial.value());

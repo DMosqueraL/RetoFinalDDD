@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 
 public class MedicoId extends Identity {
 
-    public MedicoId(String id){
+    public MedicoId(String id) {
         super(id);
     }
 
@@ -13,7 +13,7 @@ public class MedicoId extends Identity {
 
     }
 
-    public static MedicoId of(String id){
+    public static MedicoId of(String id) {
         return new MedicoId(id);
     }
 }

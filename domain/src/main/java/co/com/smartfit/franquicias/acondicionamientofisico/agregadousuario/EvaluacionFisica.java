@@ -13,16 +13,14 @@ public class EvaluacionFisica extends Entity<EvaluacionFisicaId> {
     protected IMC imc;
 
     public EvaluacionFisica(EvaluacionFisicaId evaluacionFisicaId,
-                            Peso peso, Altura altura, IMC imc){
+                            Peso peso, Altura altura, IMC imc) {
         super(evaluacionFisicaId);
-        this.peso = Peso.of(peso.value());
-        this.altura = Altura.of(altura.value());
+        this.peso = peso;
+        this.altura = altura;
         this.imc = imc;
     }
 
-    public void calcularIMC(Peso peso, Altura altura){
-        var imc = (peso.value()/Math.pow(altura.value(), 2));
+    public IMC calcularIMC(Peso peso, Altura altura) {
+        return imc = IMC.of(peso.value() / Math.pow(altura.value(), 2));
     }
-
-    public IMC Imc() {return imc;}
 }

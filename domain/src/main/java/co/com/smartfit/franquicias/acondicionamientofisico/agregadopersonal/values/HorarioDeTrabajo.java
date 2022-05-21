@@ -11,11 +11,12 @@ public class HorarioDeTrabajo implements ValueObject<String> {
     public HorarioDeTrabajo(String horario) {
         this.horario = Objects.requireNonNull(horario);
 
-        if (this.horario.isBlank() || this.horario.isEmpty()){
+        if (this.horario.isBlank() || this.horario.isEmpty()) {
             throw new IllegalArgumentException("La cantidad de usuarios no puede estar en blanco o vacio");
         }
     }
-    public static HorarioDeTrabajo of(String horario){
+
+    public static HorarioDeTrabajo of(String horario) {
         return new HorarioDeTrabajo(horario);
     }
 
