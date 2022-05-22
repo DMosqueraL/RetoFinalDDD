@@ -21,7 +21,7 @@ public class Sede extends AggregateEvent<SedeId> {
     protected Telefono telefono;
     protected Maquina maquina;
     protected Torniquete torniquete;
-    protected Mantenimiento mantenimiento;
+
     protected EstadoMantenimiento estadoMantenimiento;
 
     public Sede(SedeId sedeId, Nombre nombreSede,
@@ -57,14 +57,12 @@ public class Sede extends AggregateEvent<SedeId> {
     public void asignarMaquinaAMantenimiento(MaquinaId maquinaId, Nombre nombreMaquina,
                                              Categoria categoria, Marca marca,
                                              Serial serial,
-                                             EstadoMantenimiento estadoMantenimiento, Fecha fecha) {
+                                             Fecha fecha) {
         appendChange(new MaquinaAMantenimientoAsignada(maquinaId, nombreMaquina, categoria,
-                marca, serial, estadoMantenimiento, fecha)).apply();
+                marca, serial, fecha)).apply();
     }
 
     public void cambiarTelefonoSede(SedeId sedeId, Telefono telefono) {
-        this.sedeId = SedeId.of(sedeId.value());
-        this.telefono = Telefono.of(telefono.value());
         appendChange(new TelefonoSedeCambiado(sedeId, telefono)).apply();
     }
 

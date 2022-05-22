@@ -1,11 +1,12 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.sede;
 
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.commands.CrearMaquina;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.events.MaquinaCreada;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.commands.CambiarTelefonoSede;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.events.SedeCreada;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.*;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.events.TelefonoSedeCambiado;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Ciudad;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Direccion;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.SedeId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
-import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Serial;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
@@ -20,28 +21,25 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class CrearMaquinaUseCaseTest {
+class CambiarTelefonoSedeUseCaseTest {
 
     @InjectMocks
-    private CrearMaquinaUseCase useCase;
+    private CambiarTelefonoSedeUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    public void crearMaquinaHappyPass() {
+    public void cambiarTelefonoSedeHappyPass(){
         //Arrange
-        var command = new CrearMaquina(SedeId.of("MED001"),
-                MaquinaId.of("0001"),
-                Nombre.of("Elíptica"),
-                Categoria.of("Cardio"),
-                Marca.of("BodyMachine"),
-                Serial.of("BM-010203"));
+        var command = new CambiarTelefonoSede(SedeId.of("MED001"),
+                Telefono.of("6044010510"));
 
-        when(repository.getEventsBy("MED001")).thenReturn(history());
+        when(repository.getEventsBy("MED001")).thenReturn(sedes());
         useCase.addRepository(repository);
 
         //Act
@@ -52,16 +50,11 @@ class CrearMaquinaUseCaseTest {
                 .getDomainEvents();
 
         //Asserts
-        var maquinaCreada = (MaquinaCreada) events.get(0);
-        Assertions.assertEquals("MED001", maquinaCreada.aggregateRootId());
-//        Assertions.assertEquals("0001", maquinaCreada.getMaquinaId().value());
-        Assertions.assertEquals("Elíptica", maquinaCreada.getNombreMaquina().value());
-        Assertions.assertEquals("Cardio", maquinaCreada.getCategoria().value());
-        Assertions.assertEquals("BodyMachine", maquinaCreada.getMarca().value());
-        Assertions.assertEquals("BM-010203", maquinaCreada.getSerial().value());
+        var telefono = (TelefonoSedeCambiado)events.get(0);
+        Assertions.assertEquals("6044010510", telefono.getTelefono().value());
     }
 
-    private List<DomainEvent> history() {
+    private List<DomainEvent> sedes() {
 
         var nombreSede = Nombre.of("Smart Fit Los Rocíos");
         var ciudadSede = Ciudad.of("Medellín");
@@ -73,4 +66,5 @@ class CrearMaquinaUseCaseTest {
         event.setAggregateRootId("MED001");
         return List.of(event);
     }
+
 }

@@ -18,6 +18,8 @@ public class Maquina extends Entity<MaquinaId> {
     protected Serial serial;
     protected EstadoMantenimiento estadoMantenimiento;
 
+    protected Fecha fecha;
+
     public Maquina(MaquinaId maquinaId, Nombre nombreMaquina,
                    Categoria categoria, Marca marca, Serial serial) {
         super(maquinaId);
@@ -26,11 +28,34 @@ public class Maquina extends Entity<MaquinaId> {
         this.marca = marca;
         this.serial = serial;
     }
+//    public Maquina(MaquinaId maquinaId, Nombre nombreMaquina,
+//                   Categoria categoria, Marca marca, Serial serial,
+//                   EstadoMantenimiento estadoMantenimiento, Fecha fecha) {
+//        super(maquinaId);
+//        this.nombreMaquina = nombreMaquina;
+//        this.categoria = categoria;
+//        this.marca = marca;
+//        this.serial = serial;
+//        this.estadoMantenimiento = estadoMantenimiento;
+//        this.fecha = fecha;
+//    }
 
     public void asignarMaquinaAMantenimiento(MaquinaId maquinaId, Nombre nombreMaquina,
                                              Categoria categoria, Marca marca,
                                              Serial serial,
                                              EstadoMantenimiento estadoMantenimiento, Fecha fecha) {
+        this.maquinaId = MaquinaId.of(marca.value());
+        this.nombreMaquina = Nombre.of(nombreMaquina.value());
+        this.categoria = Categoria.of(categoria.value());
+        this.marca = Marca.of(marca.value());
+        this.serial = Serial.of(serial.value());
+        this.estadoMantenimiento = EstadoMantenimiento.of(estadoMantenimiento.value());
+        this.fecha = fecha;
+    }
+
+    public void reemplazarMaquina(MaquinaId maquinaId, Nombre nombreMaquina,
+                                  Categoria categoria, Marca marca, Serial serial,
+                                  EstadoMantenimiento estadoMantenimiento){
         this.maquinaId = MaquinaId.of(marca.value());
         this.nombreMaquina = Nombre.of(nombreMaquina.value());
         this.categoria = Categoria.of(categoria.value());

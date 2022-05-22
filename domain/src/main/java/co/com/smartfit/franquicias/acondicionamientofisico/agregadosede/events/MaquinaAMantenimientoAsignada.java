@@ -1,7 +1,6 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.events;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Categoria;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.EstadoMantenimiento;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.MaquinaId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.values.Marca;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Fecha;
@@ -16,7 +15,6 @@ public class MaquinaAMantenimientoAsignada extends DomainEvent {
     private final Categoria categoria;
     private final Marca marca;
     private final Serial serial;
-    private final EstadoMantenimiento estadoMantenimiento;
     private final Fecha fecha;
 
     public MaquinaAMantenimientoAsignada(MaquinaId maquinaId,
@@ -24,7 +22,6 @@ public class MaquinaAMantenimientoAsignada extends DomainEvent {
                                          Categoria categoria,
                                          Marca marca,
                                          Serial serial,
-                                         EstadoMantenimiento estadoMantenimiento,
                                          Fecha fecha) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.MaquinaAMantenimientoAsignada");
         this.maquinaId = maquinaId;
@@ -32,7 +29,6 @@ public class MaquinaAMantenimientoAsignada extends DomainEvent {
         this.categoria = categoria;
         this.marca = marca;
         this.serial = serial;
-        this.estadoMantenimiento = estadoMantenimiento;
         this.fecha = fecha;
     }
 
@@ -54,10 +50,6 @@ public class MaquinaAMantenimientoAsignada extends DomainEvent {
 
     public Serial getSerial() {
         return serial;
-    }
-
-    public EstadoMantenimiento getEstadoMantenimiento() {
-        return estadoMantenimiento;
     }
 
     public Fecha getFecha() {

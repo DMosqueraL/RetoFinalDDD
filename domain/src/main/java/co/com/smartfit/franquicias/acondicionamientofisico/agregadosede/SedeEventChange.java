@@ -45,8 +45,19 @@ public class SedeEventChange extends EventChange {
                     new EstadoMantenimiento(EstadoMantenimiento.Tipo.EN_BUEN_ESTADO));
         });
 
+        apply((MaquinaReemplazada event) -> {
+            sede.maquina.reemplazarMaquina(event.getMaquinaId(),
+                    event.getNombreMaquina(),
+                    event.getCategoria(),
+                    event.getMarca(),
+                    event.getSerial(),
+                    new EstadoMantenimiento(EstadoMantenimiento.Tipo.EN_BUEN_ESTADO));
+        });
+
         apply((TelefonoSedeCambiado event) -> {
-            sede.cambiarTelefonoSede(event.getSedeId(), event.getTelefono());
+
+            sede.telefono = event.getTelefono();
+//            sede.cambiarTelefonoSede(event.getSedeId(), event.getTelefono());
         });
     }
 }

@@ -14,6 +14,7 @@ public class MaquinaReemplazada extends DomainEvent {
     private final Marca marca;
     private final Serial serial;
 
+
     public MaquinaReemplazada(MaquinaId maquinaId, Nombre nombreMaquina,
                               Categoria categoria, Marca marca, Serial serial) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadosede.MaquinaReemplazada");
