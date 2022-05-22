@@ -1,5 +1,6 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events;
 
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Cargo;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.DiasALaborar;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.MedicoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
@@ -14,7 +15,7 @@ public class MedicoCreado extends DomainEvent {
     private final DocumentoIdentidad documentoMedico;
     private final Telefono telefonoMedico;
     private final Email emailMedico;
-    /* private final Cargo cargo;*/
+    private final Cargo cargo;
     private final DiasALaborar diasALaborar;
 
     public MedicoCreado(MedicoId medicoId,
@@ -23,7 +24,7 @@ public class MedicoCreado extends DomainEvent {
                         Telefono telefonoMedico,
                         Email emailMedico,
 //                        Cargo cargo,
-                        DiasALaborar diasALaborar) {
+                        DiasALaborar diasALaborar, Cargo cargo) {
         super("co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.MedicoCreado");
 
         this.medicoId = medicoId;
@@ -33,11 +34,12 @@ public class MedicoCreado extends DomainEvent {
         this.emailMedico = emailMedico;
 //        this.cargo = cargo;
         this.diasALaborar = diasALaborar;
+        this.cargo = cargo;
     }
 
-//    public Cargo getCargo() {
-//        return cargo;
-//    }
+    public Cargo getCargo() {
+        return cargo;
+    }
 
     public MedicoId getMedicoId() {
         return medicoId;

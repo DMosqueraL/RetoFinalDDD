@@ -8,11 +8,11 @@ public class Cargo implements ValueObject<Cargo.Tipo> {
 
     private Cargo.Tipo cargo;
 
-    public Cargo(Cargo.Tipo tipoMantenimiento) {
-        this.cargo = Objects.requireNonNull(tipoMantenimiento);
+    public Cargo(Cargo.Tipo  cargo) {
+        this.cargo = Objects.requireNonNull(cargo);
 
         if (String.valueOf(this.cargo).isBlank()) {
-            throw new IllegalArgumentException("El tipo de mantenimiento no debe estar en blanco");
+            throw new IllegalArgumentException("El cargodebe estar definido (No en blanco)");
         }
     }
 
@@ -27,6 +27,6 @@ public class Cargo implements ValueObject<Cargo.Tipo> {
     }
 
     public enum Tipo {
-        RECEPCIONISTA, INSTRUCTOR, MEDICO, ADMINISTRADOR;
+        POR_DEFINIR, RECEPCIONISTA, INSTRUCTOR, MEDICO, ADMINISTRADOR;
     }
 }

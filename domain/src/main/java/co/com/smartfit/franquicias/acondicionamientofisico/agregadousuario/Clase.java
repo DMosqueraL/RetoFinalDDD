@@ -23,8 +23,14 @@ public class Clase extends Entity<ClaseId> {
         this.duracion = duracion;
     }
 
-    public void cambiarNombreDeLaClase(ClaseId claseId, Nombre nombreClase) {
-        this.claseId = claseId;
+    public Clase(ClaseId claseId,
+                 Nombre nombreClase) {
+        super(claseId);
         this.nombreClase = nombreClase;
+    }
+
+    public void cambiarNombreDeLaClase(ClaseId claseId, Nombre nombreClase) {
+        this.claseId = ClaseId.of(claseId.value());
+        this.nombreClase = Nombre.of(nombreClase.value());
     }
 }

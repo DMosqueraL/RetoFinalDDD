@@ -1,5 +1,6 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.commands;
 
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Cargo;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.DiasALaborar;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.MedicoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
@@ -19,10 +20,12 @@ public class CrearMedico extends Command {
     private final Email emailMedico;
     private final DiasALaborar diasALaborar;
 
+    private final Cargo cargo;
+
     public CrearMedico(PersonalId personalId, MedicoId medicoId, Nombre nombreMedico,
                        DocumentoIdentidad documentoMedico,
                        Telefono telefonoMedico, Email emailMedico,
-                       DiasALaborar diasALaborar) {
+                       DiasALaborar diasALaborar, Cargo cargo) {
         this.personalId = personalId;
         this.medicoId = medicoId;
         this.nombreMedico = nombreMedico;
@@ -30,6 +33,7 @@ public class CrearMedico extends Command {
         this.telefonoMedico = telefonoMedico;
         this.emailMedico = emailMedico;
         this.diasALaborar = diasALaborar;
+        this.cargo = cargo;
     }
 
     public MedicoId getMedicoId() {
@@ -58,5 +62,9 @@ public class CrearMedico extends Command {
 
     public DiasALaborar getDiasALaborar() {
         return diasALaborar;
+    }
+
+    public Cargo getCargo() {
+        return cargo;
     }
 }

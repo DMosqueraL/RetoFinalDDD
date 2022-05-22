@@ -1,9 +1,6 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal;
 
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.AdministradorCreado;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.InstructorCreado;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.MedicoCreado;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.RecepcionistaCreado;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.*;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.*;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.DocumentoIdentidad;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
@@ -48,10 +45,11 @@ public class Personal extends AggregateEvent<PersonalId> {
                     DocumentoIdentidad documentoMedico,
                     Telefono telefonoMedico,
                     Email emailMedico,
-                    DiasALaborar diasALaborar) {
+                    DiasALaborar diasALaborar,
+                    Cargo cargo) {
         super(personalId);
         appendChange(new MedicoCreado(medicoId, nombreMedico,
-                documentoMedico, telefonoMedico, emailMedico, diasALaborar)).apply();
+                documentoMedico, telefonoMedico, emailMedico, diasALaborar, cargo)).apply();
         subscribe(new PersonalEventChange(this));
     }
 
@@ -90,6 +88,11 @@ public class Personal extends AggregateEvent<PersonalId> {
         var personal = new Personal(personalId);
         events.forEach(personal::applyEvent);
         return personal;
+    }
+
+    public void asignarCargoMedico(PersonalId personalId, MedicoId medicoId){
+        appendChange(new CargoMedicoAsignado(personalId, medicoId)).apply();
+
     }
 
 }

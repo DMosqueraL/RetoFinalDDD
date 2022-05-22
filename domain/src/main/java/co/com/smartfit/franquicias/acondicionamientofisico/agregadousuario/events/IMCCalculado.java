@@ -5,13 +5,13 @@ import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.value
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Peso;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class CalculadoIMC extends DomainEvent {
+public class IMCCalculado extends DomainEvent {
     private final EvaluacionFisicaId evaluacionFisicaId;
     private final Peso peso;
     private final Altura altura;
 
-    public CalculadoIMC(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura) {
-        super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.CalculadoIMC");
+    public IMCCalculado(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura) {
+        super("co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.IMCCalculado");
         this.evaluacionFisicaId = evaluacionFisicaId;
         this.peso = peso;
         this.altura = altura;

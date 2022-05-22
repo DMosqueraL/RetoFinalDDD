@@ -16,6 +16,7 @@ public class Cuenta extends Entity<CuentaId> {
     }
 
     public void cambiarAPlanGold(CuentaId cuentaId, Plan plan) {
+
         this.plan = plan;
     }
 

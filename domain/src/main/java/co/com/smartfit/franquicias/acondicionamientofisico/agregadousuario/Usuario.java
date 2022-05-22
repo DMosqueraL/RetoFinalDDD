@@ -23,19 +23,6 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     protected Clase clase;
     protected Cuenta cuenta;
 
-    /*public Usuario(UsuarioId usuarioId,
-                   Nombre nombre,
-                   Telefono telefono,
-                   Email email,
-                   Estado estado,
-                   EvaluacionFisica evaluacionFisica,
-                   Clase clase,
-                   Cuenta cuenta) {
-        super(usuarioId);
-        appendChange(new UsuarioCreado(usuarioId, nombre, telefono, email)).apply();
-        subscribe(new UsuarioEventChange(this));
-    }*/
-
     public Usuario(UsuarioId usuarioId, Nombre nombre, Telefono telefono, Email email) {
         super(usuarioId);
         appendChange(new UsuarioCreado(usuarioId, nombre, telefono, email)).apply();
@@ -75,19 +62,24 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange(new EstadoUsuarioAsignado(usuarioId, estado)).apply();
     }
 
-    public void cambiarAPlanGold(CuentaId cuentaId) {
-        appendChange(new PlanCambiadoAGold(cuentaId)).apply();
+    public void cambiarAPlanGold(CuentaId cuentaId, Mensualidad mensualidad, Plan plan) {
+        appendChange(new PlanCambiadoAGold(cuentaId, mensualidad, plan)).apply();
     }
 
-    public void cambiarAPlanPremiun(CuentaId cuentaId) {
-        appendChange(new PlanCambiadoAPremiun(cuentaId)).apply();
+    public void cambiarAPlanPremiun(CuentaId cuentaId, Mensualidad mensualidad, Plan plan) {
+        appendChange(new PlanCambiadoAPremiun(cuentaId, mensualidad, plan)).apply();
     }
 
-    public void CalcularIMC(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura) {
-        appendChange(new CalculadoIMC(evaluacionFisicaId, peso, altura)).apply();
+    public void calcularIMC(EvaluacionFisicaId evaluacionFisicaId, Peso peso, Altura altura) {
+        appendChange(new IMCCalculado(evaluacionFisicaId, peso, altura)).apply();
     }
 
     public void cambiarNombreDeLaClase(ClaseId claseId, Nombre nombreClase) {
         appendChange(new NombreDeLaClaseCambiado(claseId, nombreClase)).apply();
     }
+
+    public void mostrarIMC(IMC imc ){
+        appendChange(new IMCMostrado(imc)).apply();
+    }
+
 }

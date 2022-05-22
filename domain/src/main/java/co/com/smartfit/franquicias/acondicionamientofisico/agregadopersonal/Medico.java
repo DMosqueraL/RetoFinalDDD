@@ -14,7 +14,6 @@ public class Medico extends Entity<MedicoId> {
     protected DocumentoIdentidad documentoMedico;
     protected Telefono telefonoMedico;
     protected Email emailMedico;
-
     protected DiasALaborar diasALaborar;
 
     public Medico(MedicoId medicoId,

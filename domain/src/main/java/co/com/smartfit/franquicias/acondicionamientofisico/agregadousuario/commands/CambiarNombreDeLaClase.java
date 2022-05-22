@@ -19,7 +19,6 @@ public class CambiarNombreDeLaClase extends Command {
     public UsuarioId getUsuarioId() {
         return usuarioId;
     }
-
     public ClaseId getClaseId() {
         return claseId;
     }

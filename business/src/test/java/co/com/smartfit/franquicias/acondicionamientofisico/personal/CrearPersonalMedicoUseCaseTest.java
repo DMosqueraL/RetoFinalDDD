@@ -2,6 +2,7 @@ package co.com.smartfit.franquicias.acondicionamientofisico.personal;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.commands.CrearMedico;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.MedicoCreado;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Cargo;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.DiasALaborar;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.MedicoId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.PersonalId;
@@ -34,9 +35,10 @@ class CrearPersonalMedicoUseCaseTest {
         var telefonoMedico = Telefono.of("3163161616");
         var emailMedico = Email.of("medico@medico");
         var diasLabor = DiasALaborar.of("5");
+        var cargo = Cargo.of(Cargo.Tipo.POR_DEFINIR);
 
         var command = new CrearMedico(personalId, medicoId, nombreMedico,
-                documentoMedico, telefonoMedico, emailMedico, diasLabor);
+                documentoMedico, telefonoMedico, emailMedico, diasLabor, cargo);
 
         //Act
         var events = UseCaseHandler.getInstance()

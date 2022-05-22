@@ -1,10 +1,7 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.events.*;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.ClaseId;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Estado;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.EvaluacionFisicaId;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Plan;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.*;
 import co.com.sofka.domain.generic.EventChange;
 
 public class UsuarioEventChange extends EventChange {
@@ -18,7 +15,7 @@ public class UsuarioEventChange extends EventChange {
         });
 
         apply((CuentaCreada event) -> {
-//            var CuentaId = event.getCuentaId();
+
             var cuenta = new Cuenta(event.getCuentaId(), event.getMensualidad(),
                     new Plan(Plan.Tipo.PLAN_BÁSICO));
         });
@@ -37,15 +34,14 @@ public class UsuarioEventChange extends EventChange {
         });
 
         apply((PlanCambiadoAGold event) -> {
-            var cuentaId = event.getCuentaId();
-            var plan = new Plan(Plan.Tipo.PLAN_GOLD);
-            usuario.cuenta.cambiarAPlanGold(cuentaId, plan);
+            var cuentaId = new CuentaId();
+            var nuevoPlan = new Cuenta(cuentaId, event.getMensualidad(), new Plan(Plan.Tipo.PLAN_GOLD));
+            //usuario.cuenta.plan = usuario.cuenta.cambiarAPlanGold(cuentaId, new Plan(Plan.Tipo.PLAN_GOLD));
         });
 
         apply((PlanCambiadoAPremiun event) -> {
             var cuentaId = event.getCuentaId();
-            var plan = new Plan(Plan.Tipo.PLAN_GOLD);
-            usuario.cuenta.cambiarAPlanPremiun(cuentaId, plan);
+            var nuevoPlan = new Cuenta(cuentaId, event.getMensualidad(), new Plan(Plan.Tipo.PLAN_PREMIUN));
         });
 
         apply((EstadoUsuarioAsignado event) -> {
@@ -54,15 +50,21 @@ public class UsuarioEventChange extends EventChange {
             usuario.asignarEstadoUsuario(cuentaId, estado);
         });
 
-        apply((CalculadoIMC event) -> {
+        apply((IMCCalculado event) -> {
             var evaluacionFisicaId = event.getEvaluacionFisicaId();
             var peso = event.getPeso();
             var altura = event.getAltura();
+
             usuario.evaluacionFisica.calcularIMC(peso, altura);
         });
 
         apply((NombreDeLaClaseCambiado event) -> {
-            usuario.clase.cambiarNombreDeLaClase(event.getClaseId(), event.getNombreClase());
+            var claseId = new ClaseId();
+            var nuevaClase = new Clase(claseId, event.getNombreClase());
+        });
+
+        apply((IMCMostrado event) -> {
+            var imc = usuario.evaluacionFisica.Imc();
         });
 
     }

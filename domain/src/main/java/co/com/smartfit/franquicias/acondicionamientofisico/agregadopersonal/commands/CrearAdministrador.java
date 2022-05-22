@@ -60,4 +60,5 @@ public class CrearAdministrador extends Command {
     public Promocion getPromocion() {
         return promocion;
     }
+
 }

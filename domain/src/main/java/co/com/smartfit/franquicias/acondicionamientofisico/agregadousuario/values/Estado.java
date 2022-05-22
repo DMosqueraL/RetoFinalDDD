@@ -9,7 +9,7 @@ public class Estado implements ValueObject<Estado.Tipo> {
 
     private Tipo estado;
 
-    public Estado(Tipo tipoCaja) {
+    public Estado(Tipo estado) {
         this.estado = Objects.requireNonNull(estado);
     }
 

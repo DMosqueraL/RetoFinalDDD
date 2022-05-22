@@ -17,9 +17,12 @@ public class EvaluacionFisica extends Entity<EvaluacionFisicaId> {
         super(evaluacionFisicaId);
         this.peso = peso;
         this.altura = altura;
+        this.imc = IMC.of(1D);
+
+    }
+    public void calcularIMC(Peso peso, Altura altura) {
+        this.imc = IMC.of(peso.value() / Math.pow(altura.value(), 2));
     }
 
-    public IMC calcularIMC(Peso peso, Altura altura) {
-        return imc = IMC.of(peso.value() / Math.pow(altura.value(), 2));
-    }
+    public IMC Imc() { return imc; }
 }

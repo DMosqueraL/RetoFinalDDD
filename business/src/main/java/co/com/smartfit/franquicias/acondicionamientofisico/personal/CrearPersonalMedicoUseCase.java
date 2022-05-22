@@ -19,7 +19,8 @@ public class CrearPersonalMedicoUseCase extends UseCase<RequestCommand<CrearMedi
                 command.getDocumentoMedico(),
                 command.getTelefonoMedico(),
                 command.getEmailMedico(),
-                command.getDiasALaborar()
+                command.getDiasALaborar(),
+                command.getCargo()
         );
         emit().onResponse(new ResponseEvents(medico.getUncommittedChanges()));
     }
