@@ -35,7 +35,6 @@ public class Rutina implements ValueObject<Rutina.Detalle> {
     public interface Detalle {
         String ejercicio();
         String serie();
-
         String repeticion();
     }
 }

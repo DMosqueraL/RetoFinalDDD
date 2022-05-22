@@ -2,6 +2,7 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.events.*;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.*;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Estado;
 import co.com.sofka.domain.generic.EventChange;
 
 public class UsuarioEventChange extends EventChange {
@@ -63,8 +64,9 @@ public class UsuarioEventChange extends EventChange {
             var nuevaClase = new Clase(claseId, event.getNombreClase());
         });
 
-        apply((IMCMostrado event) -> {
-            var imc = usuario.evaluacionFisica.Imc();
+        apply((CuentaEliminada event) -> {
+            usuario.estado = event.getEstado();
+            usuario.cuenta = null;
         });
 
     }

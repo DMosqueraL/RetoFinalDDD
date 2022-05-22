@@ -3,6 +3,7 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.events.*;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.*;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Estado;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Telefono;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -11,10 +12,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import java.util.List;
 
 public class Usuario extends AggregateEvent<UsuarioId> {
-
-    protected EvaluacionFisicaId evaluacionFisicaId;
-    protected ClaseId claseId;
-    protected CuentaId cuentaId;
+    protected UsuarioId usuarioId;
     protected Nombre nombre;
     protected Telefono telefono;
     protected Email email;
@@ -58,7 +56,6 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     }
 
     public void asignarEstadoUsuario(UsuarioId usuarioId, Estado estado) {
-//        this.estado = estado;
         appendChange(new EstadoUsuarioAsignado(usuarioId, estado)).apply();
     }
 
@@ -78,8 +75,12 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange(new NombreDeLaClaseCambiado(claseId, nombreClase)).apply();
     }
 
-    public void mostrarIMC(IMC imc ){
-        appendChange(new IMCMostrado(imc)).apply();
+    public void eliminarCuenta(Estado estado){
+        appendChange(new CuentaEliminada(estado, usuarioId)).apply();
+    }
+
+    public void actualizarEstado(Estado estado){
+        appendChange(new EstadoActualizado(estado)).apply();
     }
 
 }

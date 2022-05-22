@@ -24,10 +24,6 @@ public class CrearEvaluacionFisica extends Command {
         return usuarioId;
     }
 
-    public EvaluacionFisicaId getEvaluacionFisicaId() {
-        return evaluacionFisicaId;
-    }
-
     public Peso getPeso() {
         return peso;
     }

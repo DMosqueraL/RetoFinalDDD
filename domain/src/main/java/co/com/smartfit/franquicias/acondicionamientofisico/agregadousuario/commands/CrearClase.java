@@ -28,10 +28,6 @@ public class CrearClase extends Command {
         return usuarioId;
     }
 
-    public ClaseId getClaseId() {
-        return claseId;
-    }
-
     public Nombre getNombreClase() {
         return nombreClase;
     }

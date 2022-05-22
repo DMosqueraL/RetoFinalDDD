@@ -1,4 +1,4 @@
-package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values;
+package co.com.smartfit.franquicias.acondicionamientofisico.genericos;
 
 import co.com.sofka.domain.generic.ValueObject;
 
@@ -19,6 +19,10 @@ public class Estado implements ValueObject<Estado.Tipo> {
     }
 
     public enum Tipo {
-        ACTIVO, INACTIVO;
+        ACTIVO, INACTIVO, LABORANDO, EN_VACACIONES;
+    }
+
+    public static Estado of(Estado.Tipo estado) {
+        return new Estado(estado);
     }
 }

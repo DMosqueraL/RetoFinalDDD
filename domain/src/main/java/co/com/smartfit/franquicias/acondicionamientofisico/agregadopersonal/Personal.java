@@ -10,6 +10,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
+import java.util.Map;
 
 public class Personal extends AggregateEvent<PersonalId> {
 
@@ -18,7 +19,7 @@ public class Personal extends AggregateEvent<PersonalId> {
     protected MedicoId medicoId;
     protected InstructorId instructorId;
     protected AdministradorId administradorId;
-
+    protected Map<MedicoId, Medico> medicos;
     protected Cargo cargo;
     protected Recepcionista recepcionista;
     protected Medico medico;
@@ -88,11 +89,6 @@ public class Personal extends AggregateEvent<PersonalId> {
         var personal = new Personal(personalId);
         events.forEach(personal::applyEvent);
         return personal;
-    }
-
-    public void asignarCargoMedico(PersonalId personalId, MedicoId medicoId){
-        appendChange(new CargoMedicoAsignado(personalId, medicoId)).apply();
-
     }
 
 }

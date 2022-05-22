@@ -57,5 +57,9 @@ public class SedeEventChange extends EventChange {
         apply((TelefonoSedeCambiado event) -> {
             sede.telefono = event.getTelefono();
         });
+
+        apply((MaquinaEliminada event) -> {
+            sede.maquina = null;
+        });
     }
 }

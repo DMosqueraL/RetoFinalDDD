@@ -28,17 +28,6 @@ public class Maquina extends Entity<MaquinaId> {
         this.marca = marca;
         this.serial = serial;
     }
-//    public Maquina(MaquinaId maquinaId, Nombre nombreMaquina,
-//                   Categoria categoria, Marca marca, Serial serial,
-//                   EstadoMantenimiento estadoMantenimiento, Fecha fecha) {
-//        super(maquinaId);
-//        this.nombreMaquina = nombreMaquina;
-//        this.categoria = categoria;
-//        this.marca = marca;
-//        this.serial = serial;
-//        this.estadoMantenimiento = estadoMantenimiento;
-//        this.fecha = fecha;
-//    }
 
     public void asignarMaquinaAMantenimiento(MaquinaId maquinaId, Nombre nombreMaquina,
                                              Categoria categoria, Marca marca,

@@ -14,12 +14,10 @@ public class Cuenta extends Entity<CuentaId> {
         this.mensualidad = mensualidad;
         this.plan = plan;
     }
-
     public void cambiarAPlanGold(CuentaId cuentaId, Plan plan) {
 
         this.plan = plan;
     }
-
     public void cambiarAPlanPremiun(CuentaId cuentaId, Plan plan) {
         this.plan = plan;
     }

@@ -1,7 +1,7 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.events.*;
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadopersonal.values.Cargo;
+import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Estado;
 import co.com.sofka.domain.generic.EventChange;
 
 public class PersonalEventChange extends EventChange {
@@ -10,7 +10,8 @@ public class PersonalEventChange extends EventChange {
         apply((MedicoCreado event) -> {
             personal.medico = new Medico(event.getMedicoId(), event.getNombreMedico(),
                     event.getDocumentoMedico(), event.getTelefonoMedico(),
-                   event.getEmailMedico(), event.getDiasALaborar());
+                   event.getEmailMedico(), event.getDiasALaborar(),
+                    new Estado(Estado.Tipo.LABORANDO));
         });
 
         apply((RecepcionistaCreado event) -> {
@@ -31,11 +32,6 @@ public class PersonalEventChange extends EventChange {
                     event.getNombreAdministrador(), event.getDocumentoAdministrador(),
                     event.getTelefonoAdministrador(), event.getEmailAdministrador(),
                     event.getPromocion());
-        });
-
-        apply((CargoMedicoAsignado event) -> {
-            personal.asignarCargoMedico(event.getPersonalId(),event.getMedicoId());
-            personal.cargo = new Cargo(Cargo.Tipo.MEDICO);
         });
     }
 }

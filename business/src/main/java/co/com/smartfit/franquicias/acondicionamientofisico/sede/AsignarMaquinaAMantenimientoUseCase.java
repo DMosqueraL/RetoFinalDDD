@@ -23,7 +23,6 @@ public class AsignarMaquinaAMantenimientoUseCase extends UseCase<
                 command.getCategoria(),
                 command.getMarca(),
                 command.getSerial(),
-//                command.getEstadoMantenimiento(),
                 command.getFecha()
                 );
 

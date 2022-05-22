@@ -76,4 +76,8 @@ public class Sede extends AggregateEvent<SedeId> {
         var torniqueteId = new TorniqueteId();
         appendChange(new TorniqueteReemplazado(torniqueteId, lectorHuella, serial)).apply();
     }
+
+    public void eliminarMaquina(MaquinaId maquinaId){
+        appendChange(new MaquinaEliminada(maquinaId)).apply();
+    }
 }
