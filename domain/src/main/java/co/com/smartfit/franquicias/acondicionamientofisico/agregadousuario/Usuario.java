@@ -23,7 +23,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     protected Clase clase;
     protected Cuenta cuenta;
 
-    public Usuario(UsuarioId usuarioId,
+    /*public Usuario(UsuarioId usuarioId,
                    Nombre nombre,
                    Telefono telefono,
                    Email email,
@@ -34,7 +34,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         super(usuarioId);
         appendChange(new UsuarioCreado(usuarioId, nombre, telefono, email)).apply();
         subscribe(new UsuarioEventChange(this));
-    }
+    }*/
 
     public Usuario(UsuarioId usuarioId, Nombre nombre, Telefono telefono, Email email) {
         super(usuarioId);
@@ -65,13 +65,13 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange(new ClaseCreada(claseId, nombreClase, rutina, duracion)).apply();
     }
 
-    public void crearEvaluacionFisica(Peso peso, Altura altura, IMC imc) {
+    public void crearEvaluacionFisica(Peso peso, Altura altura) {
         var evaluacionFisicaId = new EvaluacionFisicaId();
-        appendChange(new EvaluacionFisicaCreada(evaluacionFisicaId, peso, altura, imc)).apply();
+        appendChange(new EvaluacionFisicaCreada(evaluacionFisicaId, peso, altura)).apply();
     }
 
     public void asignarEstadoUsuario(UsuarioId usuarioId, Estado estado) {
-        this.estado = estado;
+//        this.estado = estado;
         appendChange(new EstadoUsuarioAsignado(usuarioId, estado)).apply();
     }
 

@@ -13,11 +13,10 @@ public class EvaluacionFisica extends Entity<EvaluacionFisicaId> {
     protected IMC imc;
 
     public EvaluacionFisica(EvaluacionFisicaId evaluacionFisicaId,
-                            Peso peso, Altura altura, IMC imc) {
+                            Peso peso, Altura altura) {
         super(evaluacionFisicaId);
         this.peso = peso;
         this.altura = altura;
-        this.imc = imc;
     }
 
     public IMC calcularIMC(Peso peso, Altura altura) {

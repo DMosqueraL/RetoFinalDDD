@@ -24,7 +24,7 @@ public class Clase extends Entity<ClaseId> {
     }
 
     public void cambiarNombreDeLaClase(ClaseId claseId, Nombre nombreClase) {
-        this.claseId = ClaseId.of(claseId.value());
-        this.nombreClase = Nombre.of(nombreClase.value());
+        this.claseId = claseId;
+        this.nombreClase = nombreClase;
     }
 }

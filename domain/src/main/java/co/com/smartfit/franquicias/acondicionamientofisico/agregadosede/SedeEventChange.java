@@ -55,9 +55,7 @@ public class SedeEventChange extends EventChange {
         });
 
         apply((TelefonoSedeCambiado event) -> {
-
             sede.telefono = event.getTelefono();
-//            sede.cambiarTelefonoSede(event.getSedeId(), event.getTelefono());
         });
     }
 }

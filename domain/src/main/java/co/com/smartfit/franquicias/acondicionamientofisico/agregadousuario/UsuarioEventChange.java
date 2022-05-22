@@ -1,7 +1,9 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario;
 
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.events.*;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.ClaseId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Estado;
+import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.EvaluacionFisicaId;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Plan;
 import co.com.sofka.domain.generic.EventChange;
 
@@ -16,21 +18,22 @@ public class UsuarioEventChange extends EventChange {
         });
 
         apply((CuentaCreada event) -> {
-            var CuentaId = event.getCuentaId();
-            var cuenta = new Cuenta(usuario.cuentaId, event.getMensualidad(),
+//            var CuentaId = event.getCuentaId();
+            var cuenta = new Cuenta(event.getCuentaId(), event.getMensualidad(),
                     new Plan(Plan.Tipo.PLAN_BÁSICO));
         });
 
         apply((ClaseCreada event) -> {
-            usuario.clase.nombreClase = event.getNombreClase();
-            usuario.clase.rutina = event.getRutina();
-            usuario.clase.duracion = event.getDuracion();
+            var claseId = new ClaseId();
+            var clase = new Clase(claseId, event.getNombreClase(),
+                    event.getRutina(),
+                    event.getDuracion());
         });
 
         apply((EvaluacionFisicaCreada event) -> {
-            usuario.evaluacionFisica.peso = event.getPeso();
-            usuario.evaluacionFisica.altura = event.getAltura();
-            usuario.evaluacionFisica.imc = event.getImc();
+            var evFisId = new EvaluacionFisicaId();
+            usuario.evaluacionFisica = new EvaluacionFisica(evFisId, event.getPeso(), event.getAltura());
+
         });
 
         apply((PlanCambiadoAGold event) -> {
@@ -59,9 +62,7 @@ public class UsuarioEventChange extends EventChange {
         });
 
         apply((NombreDeLaClaseCambiado event) -> {
-            var claseId = event.getClaseId();
-            var nombreClase = event.getNombreClase();
-            usuario.clase.cambiarNombreDeLaClase(claseId, nombreClase);
+            usuario.clase.cambiarNombreDeLaClase(event.getClaseId(), event.getNombreClase());
         });
 
     }

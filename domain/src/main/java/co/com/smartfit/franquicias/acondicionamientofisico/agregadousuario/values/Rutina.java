@@ -2,32 +2,40 @@ package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.valu
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.util.List;
 import java.util.Objects;
 
-public class Rutina implements ValueObject<List<Object>> {
+public class Rutina implements ValueObject<Rutina.Detalle> {
 
-    private final Ejercicio ejercicio;
-    private final Serie serie;
-    private final Repeticion repeticion;
-    private final List<Object> rutina = null;
+    private final String ejercicio;
+    private final String serie;
+    private final String repeticion;
 
-    public Rutina(Ejercicio ejercicio, Serie serie, Repeticion repeticion) {
+    public Rutina(String ejercicio, String serie, String repeticion) {
         this.ejercicio = Objects.requireNonNull(ejercicio);
         this.serie = Objects.requireNonNull(serie);
         this.repeticion = Objects.requireNonNull(repeticion);
-
-        this.rutina.add(ejercicio);
-        this.rutina.add(serie);
-        this.rutina.add(repeticion);
     }
 
-    /*public static Rutina of(List<Object> rutina) {
-        return new Rutina(rutina);
-    }*/
+    public static Rutina of(String ejercicio, String serie, String repeticion) {
+        return new Rutina(ejercicio, serie, repeticion);
+    }
 
     @Override
-    public List<Object> value() {
-        return rutina;
+    public Detalle value() {
+        return new Detalle(){
+            @Override
+            public String ejercicio(){return ejercicio;}
+            @Override
+            public String serie(){return serie;}
+            @Override
+            public String repeticion(){return repeticion;}
+        };
+    }
+
+    public interface Detalle {
+        String ejercicio();
+        String serie();
+
+        String repeticion();
     }
 }

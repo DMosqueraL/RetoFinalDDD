@@ -1,6 +1,5 @@
 package co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.commands;
 
-import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.Estado;
 import co.com.smartfit.franquicias.acondicionamientofisico.agregadousuario.values.UsuarioId;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Email;
 import co.com.smartfit.franquicias.acondicionamientofisico.genericos.Nombre;
@@ -12,18 +11,17 @@ public class CrearUsuario extends Command {
     private final Nombre nombreUsuario;
     private final Telefono telefono;
     private final Email email;
-    private final Estado estado;
+//    private final Estado estado;
 
     public CrearUsuario(UsuarioId usuarioId,
                         Nombre nombreUsuario,
                         Telefono telefono,
-                        Email email,
-                        Estado estado) {
+                        Email email) {
         this.usuarioId = usuarioId;
         this.nombreUsuario = nombreUsuario;
         this.telefono = telefono;
         this.email = email;
-        this.estado = estado;
+//        this.estado = estado;
     }
 
     public UsuarioId getUsuarioId() {
@@ -42,7 +40,7 @@ public class CrearUsuario extends Command {
         return email;
     }
 
-    public Estado getEstado() {
-        return estado;
-    }
+//    public Estado getEstado() {
+//        return estado;
+//    }
 }
