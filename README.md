@@ -42,6 +42,11 @@ Se desarrollaron:
 
 Video Sustentación:
 
+https://youtu.be/8YVviNb9AM8
+
+Archivo Draw - Diagramas
+https://drive.google.com/file/d/1BgTta5zuNb0TtIa65AB6_fOaJBCwAWk6/view?usp=sharing
+
 
 
 Muchas Gracias!!! ^_^
